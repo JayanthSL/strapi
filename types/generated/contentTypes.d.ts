@@ -6,12 +6,21 @@ export interface ApiCustomerCustomer extends Struct.CollectionTypeSchema {
     singularName: 'customer';
     pluralName: 'customers';
     displayName: 'Customer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     phoneNumber: Schema.Attribute.String;
+    pin: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    amount: Schema.Attribute.Decimal;
+    accessed: Schema.Attribute.String;
+    profile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -478,7 +487,6 @@ export interface PluginUsersPermissionsUser
     displayName: 'User';
   };
   options: {
-    timestamps: true;
     draftAndPublish: false;
   };
   attributes: {
@@ -507,6 +515,9 @@ export interface PluginUsersPermissionsUser
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    price: Schema.Attribute.Decimal;
+    phonenumber: Schema.Attribute.String;
+    pin: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

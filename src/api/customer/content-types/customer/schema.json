@@ -4,7 +4,8 @@
   "info": {
     "singularName": "customer",
     "pluralName": "customers",
-    "displayName": "Customer"
+    "displayName": "Customer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,28 @@
   "attributes": {
     "phoneNumber": {
       "type": "string"
+    },
+    "pin": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "accessed": {
+      "type": "string"
+    },
+    "profile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
